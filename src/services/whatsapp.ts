@@ -791,6 +791,8 @@ export class WhatsAppBot {
     const storeCommands = ['.storemenu', 'storemenu', '.list', 'list', '.addlist', 'addlist', '.dellist', 'dellist', '.update', 'update', '.jeda', 'jeda', '.tambah', 'tambah', '.kurang', 'kurang', '.kali', 'kali', '.delsetdone', 'delsetdone', '.changedone', 'changedone', '.setdone', 'setdone', '.delproses', 'delproses', '.changeproses', 'changeproses', '.setproses', 'setproses', '.proses', 'proses', '.done', 'done'];
     const hentaiCommands = ['.hentaimenu', 'hentaimenu', '.hentai', 'hentai', '.nsfw', 'nsfw', '.nsfwahegao', 'nsfwahegao', '.nsfwass', 'nsfwass', '.nsfwbdsm', 'nsfwbdsm', '.nsfwgangbang', 'nsfwgangbang', '.nsfwgay', 'nsfwgay', '.nsfwloli', 'nsfwloli', '.nsfwneko', 'nsfwneko', '.nsfwpussy', 'nsfwpussy', '.nsfwzettai', 'nsfwzettai'];
     const hantuCommands = ['.hantumenu', 'hantumenu', '.fotpocong', 'fotpocong', '.fotkuntilanak', 'fotkuntilanak', '.fotgenderuwo', 'fotgenderuwo', '.fotwewegombel', 'fotwewegombel', '.fottuyul', 'fottuyul', '.fotsundelbolong', 'fotsundelbolong', '.fotpalasik', 'fotpalasik', '.fotkuyang', 'fotkuyang', '.fotbanaspati', 'fotbanaspati', '.fotjelangkung', 'fotjelangkung', '.fotsiluman', 'fotsiluman', '.fotnyirorokidul', 'fotnyirorokidul', '.fotgundulpringis', 'fotgundulpringis'];
+    const coganCommands = ['.coganmenu', 'coganmenu', '.coganiqbaal', 'coganiqbaal', '.coganjefrinichol', 'coganjefrinichol', '.coganangga', 'coganangga', '.coganverrell', 'coganverrell', '.coganrizky', 'coganrizky', '.coganjepang', 'coganjepang', '.cogankorea', 'cogankorea', '.coganthailand', 'coganthailand', '.coganchina', 'coganchina', '.cogandenji', 'cogandenji', '.cogangojo', 'cogangojo', '.coganlevi', 'coganlevi', '.coganluffy', 'coganluffy', '.cogansasuke', 'cogansasuke', '.cogannaruto', 'cogannaruto', '.cogankakashi', 'cogankakashi'];
+    const posterCommands = ['.postermenu', 'postermenu', '.pengabdisetan', 'pengabdisetan', '.kkndidesapenari', 'kkndidesapenari', '.sewudino', 'sewudino', '.impetigore', 'impetigore', '.rumahdara', 'rumahdara', '.qodrat', 'qodrat', '.kuntilanak', 'kuntilanak', '.jelangkung', 'jelangkung', '.keramat', 'keramat', '.suzzanna', 'suzzanna', '.mangkujiwo', 'mangkujiwo', '.losmenmelati', 'losmenmelati'];
     const sulapCommands = ['.sulapmenu', 'sulapmenu', '.kartusulap', 'kartusulap', '.tongkatsulap', 'tongkatsulap', '.topisulap', 'topisulap', '.koinsulap', 'koinsulap', '.thumbtip', 'thumbtip', '.cangkirdanbola', 'cangkirdanbola', '.linkingrings', 'linkingrings', '.spongeballs', 'spongeballs', '.silkscarf', 'silkscarf', '.appearingcane', 'appearingcane', '.vanishingcane', 'vanishingcane', '.changebag', 'changebag', '.dovepan', 'dovepan', '.floatingtable', 'floatingtable', '.levitationdevice', 'levitationdevice', '.kotakpedang', 'kotakpedang', '.guillotinesulap', 'guillotinesulap', '.zigzagbox', 'zigzagbox', '.kotaktembus', 'kotaktembus', '.firewallet', 'firewallet'];
     
     if (ownerCommands.includes(requestedCmd) && !isOwner) {
@@ -816,7 +818,7 @@ export class WhatsAppBot {
 
     if (isMenuCmd) {
       const botName = this.customBotName || this.sock.user?.name || "Wabot Pro";
-      const totalFitur = ownerCommands.length + groupCommands.length + funCommands.length + margaCommands.length + videoCommands.length + stickerCommands.length + downloadCommands.length + kristenCommands.length + islamCommands.length + cecanCommands.length + primbonCommands.length + animeCommands.length + sertifikatCommands.length + rpgCommands.length + storeCommands.length + beritaCommands.length + sulapCommands.length + hentaiCommands.length + hantuCommands.length;
+      const totalFitur = ownerCommands.length + groupCommands.length + funCommands.length + margaCommands.length + videoCommands.length + stickerCommands.length + downloadCommands.length + kristenCommands.length + islamCommands.length + cecanCommands.length + primbonCommands.length + animeCommands.length + sertifikatCommands.length + rpgCommands.length + storeCommands.length + beritaCommands.length + sulapCommands.length + hentaiCommands.length + hantuCommands.length + posterCommands.length + coganCommands.length;
       
       const dateNow = new Date();
       const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Jakarta' };
@@ -860,6 +862,8 @@ ${readmore}
 │ .sulapmenu
 │ .hentaimenu
 │ .hantumenu
+│ .postermenu
+│ .coganmenu
 
 Ketik menu yang kamu inginkan.`;
       
@@ -1905,7 +1909,7 @@ Ketik menu yang kamu inginkan.`;
       this.broadcastState(`Deleted custom bot name`);
       await this.sock.sendMessage(jid, { text: `✅ Berhasil mereset nama bot ke default.` }, { quoted: msg });
     } else if (body === ".totalfitur" || body === "totalfitur") {
-      const totalFitur = ownerCommands.length + groupCommands.length + margaCommands.length + videoCommands.length + stickerCommands.length + funCommands.length + downloadCommands.length + kristenCommands.length + islamCommands.length + cecanCommands.length + primbonCommands.length + animeCommands.length + sertifikatCommands.length + rpgCommands.length + storeCommands.length + beritaCommands.length + sulapCommands.length + hentaiCommands.length + hantuCommands.length;
+      const totalFitur = ownerCommands.length + groupCommands.length + margaCommands.length + videoCommands.length + stickerCommands.length + funCommands.length + downloadCommands.length + kristenCommands.length + islamCommands.length + cecanCommands.length + primbonCommands.length + animeCommands.length + sertifikatCommands.length + rpgCommands.length + storeCommands.length + beritaCommands.length + sulapCommands.length + hentaiCommands.length + hantuCommands.length + posterCommands.length + coganCommands.length;
       await this.sock.sendMessage(jid, { text: `⚠️ *Total Fitur Bot* : ${totalFitur} Fitur` }, { quoted: msg });
     } else if (body.startsWith(".addprefix") || body.startsWith("addprefix")) {
       const text = messageContent.replace(/^\.?addprefix\s*/i, "").trim();
@@ -2565,6 +2569,116 @@ Ketik menu yang kamu inginkan.`;
             }
         } catch (e) {
            await this.sock.sendMessage(jid, { text: "❌ *Gagal mengambil foto.*" }, { quoted: msg });
+        }
+      }
+    
+    
+    } else if (body === "coganmenu" || body === ".coganmenu" || body === "cogan menu" || body === ".cogan menu") {
+      const coganText = `👨 *Cogan Menu*
+
+│ .coganiqbaal
+│ .coganjefrinichol
+│ .coganangga
+│ .coganverrell
+│ .coganrizky
+│ .coganjepang
+│ .cogankorea
+│ .coganthailand
+│ .coganchina
+│ .cogandenji
+│ .cogangojo
+│ .coganlevi
+│ .coganluffy
+│ .cogansasuke
+│ .cogannaruto
+│ .cogankakashi`;
+      await this.sock.sendMessage(jid, { text: coganText }, { quoted: msg });
+      this.broadcastState(`Responded to coganmenu command`);
+    } else if (coganCommands.includes(body)) {
+      const q = messageContent.replace(/^\.?cogan/i, "").trim().toLowerCase();
+      const coganQueries: Record<string, string> = {
+        "iqbaal": "foto iqbaal ramadhan ganteng",
+        "jefrinichol": "foto jefri nichol ganteng",
+        "angga": "foto angga yunanda ganteng",
+        "verrell": "foto verrell bramasta ganteng",
+        "rizky": "foto rizky nazar ganteng",
+        "jepang": "japanese handsome guy",
+        "korea": "korean handsome guy ulzzang",
+        "thailand": "thai handsome guy actor",
+        "china": "chinese handsome guy actor",
+        "denji": "denji chainsaw man icon aesthetic",
+        "gojo": "gojo satoru icon aesthetic",
+        "levi": "levi ackerman icon aesthetic",
+        "luffy": "monkey d luffy icon aesthetic",
+        "sasuke": "sasuke uchiha icon aesthetic",
+        "naruto": "naruto uzumaki icon aesthetic",
+        "kakashi": "kakashi hatake icon aesthetic"
+      };
+      
+      if (coganQueries[q]) {
+        await this.sock.sendMessage(jid, { text: `⏳ *Mencari foto ${q}...*` }, { quoted: msg });
+        try {
+           const p = await ab.pinterest(coganQueries[q]);
+           if (p && p.result && p.result.result && p.result.result.length > 0) {
+              const arr = p.result.result;
+              const randomIdx = Math.floor(Math.random() * arr.length);
+              const imageUrl = arr[randomIdx].image_url || arr[randomIdx].images?.original || arr[randomIdx].images?.large;
+              await this.sock.sendMessage(jid, { image: { url: imageUrl }, caption: `👨 *Cogan ${q.charAt(0).toUpperCase() + q.slice(1)}*` }, { quoted: msg });
+           } else {
+              await this.sock.sendMessage(jid, { text: `❌ *Foto ${q} tidak ditemukan.*` }, { quoted: msg });
+           }
+        } catch (e) {
+           await this.sock.sendMessage(jid, { text: "❌ *Gagal mengambil foto.*" }, { quoted: msg });
+        }
+      }
+    } else if (body === "postermenu" || body === ".postermenu" || body === "poster menu" || body === ".poster menu") {
+      const posterText = `🎬 *Poster Menu*
+
+│ .pengabdisetan
+│ .kkndidesapenari
+│ .sewudino
+│ .impetigore
+│ .rumahdara
+│ .qodrat
+│ .kuntilanak
+│ .jelangkung
+│ .keramat
+│ .suzzanna
+│ .mangkujiwo
+│ .losmenmelati`;
+      await this.sock.sendMessage(jid, { text: posterText }, { quoted: msg });
+      this.broadcastState(`Responded to postermenu command`);
+    } else if (posterCommands.includes(body)) {
+      const q = messageContent.replace(/^\.?/i, "").trim().toLowerCase();
+      const posterQueries: Record<string, string> = {
+        "pengabdisetan": "poster film pengabdi setan",
+        "kkndidesapenari": "poster film kkn di desa penari",
+        "sewudino": "poster film sewu dino",
+        "impetigore": "poster film perempuan tanah jahanam",
+        "rumahdara": "poster film rumah dara macabre",
+        "qodrat": "poster film qodrat",
+        "kuntilanak": "poster film kuntilanak horror",
+        "jelangkung": "poster film jelangkung 2001",
+        "keramat": "poster film keramat 2009",
+        "suzzanna": "poster film suzzanna bernapas dalam kubur",
+        "mangkujiwo": "poster film mangkujiwo",
+        "losmenmelati": "poster film losmen melati"
+      };
+      
+      if (posterQueries[q]) {
+        await this.sock.sendMessage(jid, { text: `⏳ *Mencari poster ${q}...*` }, { quoted: msg });
+        try {
+           const p = await ab.pinterest(posterQueries[q]);
+           if (p && p.result && p.result.result && p.result.result.length > 0) {
+              const arr = p.result.result;
+              const randomIdx = Math.floor(Math.random() * arr.length);
+              const imageUrl = arr[randomIdx].image_url || arr[randomIdx].images?.original || arr[randomIdx].images?.large;
+              await this.sock.sendMessage(jid, { image: { url: imageUrl }, caption: `🎬 *Poster ${q.charAt(0).toUpperCase() + q.slice(1)}*` }, { quoted: msg });
+           } else {
+              await this.sock.sendMessage(jid, { text: `❌ *Poster ${q} tidak ditemukan.*` }, { quoted: msg });
+           }
+        } catch (e) {
+           await this.sock.sendMessage(jid, { text: "❌ *Gagal mengambil poster.*" }, { quoted: msg });
         }
       }
     } else if (body === "hantumenu" || body === ".hantumenu" || body === "hantu menu" || body === ".hantu menu") {
